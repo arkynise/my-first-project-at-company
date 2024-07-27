@@ -1,0 +1,14 @@
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, pink, teal);
+    
+}
+.scrollable_Y{
+    overflow-y: auto;
+    height: 500px;
+}

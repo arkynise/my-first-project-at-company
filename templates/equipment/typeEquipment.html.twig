@@ -1,0 +1,62 @@
+{% extends 'dashboard/index.html.twig' %}
+
+
+
+{% block search_bar %}
+
+{% include 'equipment/searchbar.html.twig' %}
+
+{% endblock %}
+
+{% block section %}
+
+	<div id="equipment">
+		
+
+		<table class="table table-striped table-dark">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">type</th>
+					<th scope="col">date de creetion</th>
+                    <th scope="col">contien</th>
+					<th scope="col"></th>
+				</tr>
+			</thead>
+		</table>
+		<div class="scrollable_Y">
+			<table class="table table-striped">
+				<tbody>
+                {% for type in types %}
+					<tr title="disponibe">
+						<td>1</td>
+						<td>{{ type.nom_type }}</td>
+						<td>{{ type.date_creetion }}</td>
+						<td></td>
+						<td>
+							<button type="button" class="btn btn-outline-danger" >
+								<i class="fa-regular fa-trash-can fa-xl"></i>
+                                <a class="d-none"></a>
+							</button>
+							<button type="button" class="btn btn-outline-success">
+								<i class="fa-solid fa-pen fa-xl" style="color: #63E6BE;"></i>
+								<a  class="d-none"></a>
+                            </button>
+                            
+
+						</td>
+					</tr>
+                {% endfor %}
+					
+				</tbody>
+
+			</table>
+		</div>
+
+	</div>
+
+{% endblock %}
+
+
+
+	

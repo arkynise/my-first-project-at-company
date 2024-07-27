@@ -1,0 +1,74 @@
+{% extends 'dashboard/index.html.twig' %}
+
+
+
+{% block search_bar %}
+
+{% include 'equipment/searchbar.html.twig' %}
+
+{% endblock %}
+
+{% block section %}
+
+	<div id="equipment">
+		
+	{% if count is defined %}
+		<div>
+			
+			<p>le nombre des materials trouvé est {{count}}</p>
+
+		</div>
+	{% endif %}
+		<table class="table table-striped table-dark">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">image</th>
+					<th scope="col">type</th>
+					<th scope="col">mark</th>
+					<th scope="col">modele</th>
+					<th scope="col">date de creetion</th>
+					<th scope="col"></th>
+				</tr>
+			</thead>
+		</table>
+		<div  class="scrollable_Y" style="height:350px;">
+			<table class="table table-striped">
+				<tbody>
+                {% for Eqp in Equipments %}
+					<tr title="disponibe">
+						<td>1</td>
+						<td>
+							<img src="{{ asset('images/equipment/' ~ Eqp.image) }}" alt="" class="equipment_image">
+						</td>
+						<td>{{ Eqp.type }}</td>
+						<td>{{ Eqp.nom }}</td>
+						<td>{{ Eqp.model }}</td>
+						<td>{{ Eqp.getDateAjoute() ? Eqp.getDateAjoute()|date('Y-m-d') : 'N/A' }}</td>
+						<td>
+							<button type="button" class="btn btn-outline-danger"  onclick="document.getElementById('delet{{Eqp.id}}').click()">
+								<i class="fa-regular fa-trash-can fa-xl"></i>
+                                <a href="{{ path('SupremEquipment', { 'id':Eqp.id}) }}" id="delet{{Eqp.id}}" class="d-none"></a>
+							</button>
+							<button type="button" class="btn btn-outline-success" onclick="document.getElementById('update{{Eqp.id}}').click()">
+								<i class="fa-solid fa-pen fa-xl" style="color: #63E6BE;"></i>
+								<a href="{{ path('UpdateEquipment', { 'id':Eqp.id}) }}" id="update{{Eqp.id}}" class="d-none"></a>
+                            </button>
+                            
+
+						</td>
+					</tr>
+                {% endfor %}
+					
+				</tbody>
+
+			</table>
+		</div>
+
+	</div>
+
+{% endblock %}
+
+
+
+	

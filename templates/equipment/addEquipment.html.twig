@@ -1,0 +1,66 @@
+{% extends "dashboard/index.html.twig" %}
+
+
+{% block search_bar %}
+	{% include 'employee/searchbar.html.twig' %}
+{% endblock %}
+
+{% block section %}
+	<section>
+
+		<form action="{{path('SauvgarderEquipment')}}" method="post" enctype="multipart/form-data" class="scrollable_Y p-4" style="height:450px;">
+			<div data-mdb-input-init class="form-outline mb-4 d-flex justify-content-center">
+				<div class="project">
+					<div class="hdImg">
+						<img alt="image de material" id="image_holder" class="againImg" src="{{asset('images/equipment/upload_image_icon.jpg')}}" onclick="document.getElementById('image_uploader').click()">
+					</div>
+					<input type="file" name="image" id="image_uploader" class="d-none">
+
+				</div>
+			</div>
+            <div data-mdb-input-init class="form-outline mb-4">
+				<label class="form-label" for="typePasswordX-2">type</label>
+				<select name="type" id="equipment_state" class="form-control form-control-lg">
+					<option value="laptop">laptop</option>
+					<option value="ecrant">ecrant</option>
+					<option value="impriment">impriment</option>
+				</select>
+			</div>
+			<div data-mdb-input-init class="form-outline mb-4">
+
+				<label class="form-label fs-5" for="typeEmailX-2">mark</label>
+				<input type="text" id="typeEmailX-2" name="mark" minlength="4" class="form-control form-control-lg" required/>
+
+			</div>
+			<div data-mdb-input-init class="form-outline mb-4">
+				<label class="form-label" for="typePasswordX-2">model</label>
+				<input type="text" id="typePasswordX-2" name="model" class="form-control form-control-lg" minlength="4" required/>
+
+			</div>
+
+
+			<div data-mdb-input-init class="form-outline mb-4">
+				<label class="form-label" for="typePasswordX-2">description</label>
+				<textarea name="description" id="" name="description" class="form-control form-control-lg"></textarea>
+
+			</div>
+
+			
+			<div data-mdb-input-init class="form-outline mb-4" id="distination"></div>
+			<div data-mdb-input-init class="form-outline mb-4" id="state_utiliser"></div>
+			<button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block" type="submit">sauvegarder</button>
+		</form>
+
+
+	</section>
+
+	
+
+
+{% endblock %}
+
+
+{% block jscript %}
+	<script src="{{asset('js/upload_image.js')}}"></script>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+body{
+    background-color: green;
+}
+
+.rounded-t-5 {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+
+  @media (min-width: 992px) {
+    .rounded-tr-lg-0 {
+      border-top-right-radius: 0;
+    }
+
+    .rounded-bl-lg-5 {
+      border-bottom-left-radius: 0.5rem;
+    }
+  }
+
+
+
+
+
+
+
+
+
+/*.login-image{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+input{
+    width:200px;
+    border: none;
+    outline: none;
+}
+form{
+    height: 200px;
+}
+.form-holder{
+    width: 400px;
+    height: 400px;
+    background-color: #E8E8E8;
+    border-radius: 20px;
+}
+.button{
+    background-color: aqua;
+    padding: 4px;
+}*/

@@ -1,0 +1,84 @@
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, pink, teal);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.add_equipment_holder{
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    width:1000px;
+}
+.size{
+    width: 500px;
+    height: 500px;
+}
+.equipment_info{
+    border-left: 1px solid black;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.add_image{
+    
+    border-right: 1px solid black;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; 
+}
+.add_sign{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, .4);
+    cursor: pointer;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.add_sign:hover{
+    opacity: 1;
+}
+input,textarea{
+    background-color: #D9D9D9;
+    font-size: 20px;
+    border: none;
+    padding: 4px;
+    width: 300px;
+    border-radius: 5px;
+    outline: none;
+}
+textarea{
+    resize: none;
+    height: 200px;
+}
+label{
+    font-size: 20px;
+}
+input:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.7); /* Add shadow on focus */
+    border-color: #00f; /* Optional: change border color on focus */
+}
+textarea:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.7); /* Add shadow on focus */
+    border-color: #00f; /* Optional: change border color on focus */
+}
+.scrollable_Y{
+    overflow-y: auto;
+}

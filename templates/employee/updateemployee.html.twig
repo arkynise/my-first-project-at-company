@@ -1,0 +1,51 @@
+{% extends "dashboard/index.html.twig" %}
+
+
+{% block search_bar %}
+	{% include 'employee/searchbar.html.twig' %}
+{% endblock %}
+
+{% block section %}
+	<section>
+
+		<form action="{{path('saveUpdateEmployee',{ 'id':emp.id}) }}" method="post" class="scrollable_Y" style="height:450px;">
+			<div data-mdb-input-init class="form-outline mb-4">
+
+				<label class="form-label fs-5" for="typeEmailX-2">nom</label>
+				<input type="text" id="typeEmailX-2" name="nom" minlength="4" class="form-control form-control-lg" value="{{emp.name}}" required/>
+
+			</div>
+			<div data-mdb-input-init class="form-outline mb-4">
+				<label class="form-label" for="typePasswordX-2">prenom</label>
+				<input type="text" id="typePasswordX-2" name="prenom" class="form-control form-control-lg" minlength="4" value="{{emp.lastname}}" required/>
+
+			</div>
+			
+			<div data-mdb-input-init class="form-outline mb-4">
+				<label class="form-label" for="typePasswordX-2">date de naissance</label>
+				<input type="date" id="typePasswordX-2" name="ddn" class="form-control form-control-lg" value="{{emp.birthday|date('Y-m-d') }}"required/>
+
+			</div>
+			<div data-mdb-input-init class="form-outline mb-4">
+				<label class="form-label" for="typePasswordX-2">telephone</label>
+				<input type="number" id="typePasswordX-2" name="telephone" class="form-control form-control-lg" minlength="10" maxlenght="10" pattern="^(07|06|05)\d{8}$"  value="{{emp.telephone}}"required/>
+
+			</div>
+			<div data-mdb-input-init class="form-outline mb-4">
+				<label class="form-label" for="typePasswordX-2">email</label>
+				<input type="email" id="typePasswordX-2" name="email" class="form-control form-control-lg" value="{{emp.email}}"/>
+
+			</div>
+			<div data-mdb-input-init class="form-outline mb-4">
+				<label class="form-label" for="typePasswordX-2">salaire</label>
+				<input type="number" id="typePasswordX-2" name="salaire" class="form-control form-control-lg" value="{{emp.salaire}}"/>
+
+			</div>
+      <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block" type="submit">sauvegarder</button>
+		</form>
+
+		
+				      
+	</section>
+
+{% endblock %}

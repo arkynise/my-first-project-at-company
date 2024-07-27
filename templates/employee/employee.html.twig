@@ -1,0 +1,63 @@
+{% extends 'dashboard/index.html.twig' %}
+
+
+{% block search_bar %}
+	{% include 'employee/searchbar.html.twig' %}
+{% endblock %}
+
+
+{% block section %}
+
+	<div id="employee">
+	{% if count is defined %}
+		<div>
+			
+			<p>le nombre d'employés trouvé est {{count}}</p>
+
+		</div>
+	{% endif %}
+
+		<table class="table table-striped table-dark">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">nom</th>
+					<th scope="col">prenom</th>
+					<th scope="col">telephone</th>
+					<th scope="col">date de creetion</th>
+					<th scope="col"></th>
+				</tr>
+			</thead>
+		</table>
+		<div class="scrollable_Y" style="height:350px;">
+			<table class="table table-striped">
+				<tbody>
+					{% for Emp in Emps %}
+						<tr>
+							<th scope="row">{{Emp.id}}</th>
+							<td>{{Emp.name}}</td>
+							<td>{{Emp.lastname}}</td>
+							<td>{{Emp.telephone}}</td>
+							<td>{{ Emp.getDateDeCreetion() ? Emp.getDateDeCreetion()|date('Y-m-d') : 'N/A' }}</td>
+							<td>
+								<button type="button" class="btn btn-outline-danger" onclick="document.getElementById('link_to_delet{{Emp.id}}').click()">
+									<i class="fa-regular fa-trash-can fa-xl"></i>
+									<a href="{{ path('SupremEmploiyee', { 'id':Emp.id}) }}" id="link_to_delet{{Emp.id}}" class="d-none"></a>
+								</button>
+
+								<button type="button" class="btn btn-outline-success" onclick="document.getElementById('link_to_update{{Emp.id}}').click()">
+									<i class="fa-solid fa-pen fa-xl" style="color: #63E6BE;"></i>
+									<a href="{{ path('UpdateEmployee', { 'id':Emp.id}) }}" id="link_to_update{{Emp.id}}" class="d-none"></a>
+								</button>
+
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+
+			</table>
+		</div>
+
+	</div>
+
+{% endblock %}

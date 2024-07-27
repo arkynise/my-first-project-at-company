@@ -1,0 +1,64 @@
+<nav id="sidebar">
+				<div class="p-4 pt-5">
+        <img src="{{asset('images/logo/Booki.png')}}" class="mb-5">
+		  		
+	        <ul class="list-unstyled components mb-5">
+            <li>
+	              <a href="#">Nontefecation</a>
+	          </li>
+	          <li class="active">
+	            <a href="#pageEmployee" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Employee</a>
+	            <ul class="collapse list-unstyled" id="pageEmployee">
+                <li>
+                    <a href="{{path('employee')}}">List Employee</a>
+                </li>
+                <li>
+                    <a href="{{path('AjouteEmploiyee')}}">Ajoute Employee</a>
+                </li>
+                
+	            </ul>
+	          </li>
+	          
+	          <li>
+              <a href="#pageMaterial" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Material</a>
+              <ul class="collapse list-unstyled" id="pageMaterial">
+                <li>
+                    <a href="{{path('equipment')}}">List Material</a>
+                </li>
+                <li>
+                    <a href="{{path('AjouteEquipment')}}">Ajoute Material</a>
+                </li>
+                <li>
+                    <a href="{{path('typeEquipent')}}">List Types des materials </a>
+                </li>
+                <li>
+                    <a href="{{path('ajouteTypeEquipent')}}">Ajoute Type</a>
+                </li>
+
+              </ul>
+	          </li>
+	          <li>
+              <a href="#pageUtlisateurs" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Utlisateurs</a>
+              <ul class="collapse list-unstyled" id="pageUtlisateurs">
+                <li>
+                    <a href="{{path('users')}}">List utilisateur</a>
+                </li>
+                <li>
+                    <a href="{{path('ajouteUser')}}">Ajoute utilisateur</a>
+                </li>
+
+              </ul>
+	          </li>
+	          <li>
+              <a href="#">Dconicter</a>
+	          </li>
+	        </ul>
+
+	        <div class="footer">
+	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	        </div>
+
+	      </div>
+    	</nav>

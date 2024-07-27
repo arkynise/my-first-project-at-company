@@ -1,0 +1,445 @@
+/****** General ***********/
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+
+:root {
+    --main-color: #0065FC;
+    --main-bg-color: #F2F2F2;
+    --filter-bg-color: #DEEBFF;
+}
+
+.fa-solid {
+    color: var(--main-color);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.section-title {
+    margin: 0;
+    font-size: 22px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px;
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
+
+.card img {
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 16px;
+}
+
+.euro {
+    font-weight: 700;
+}
+
+.neutral-star {
+    color: var(--main-bg-color)
+}
+
+/****** Hebergements And Populaires ***********/
+.hebergements-and-populaires {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hebergements-and-populaires section {
+    background-color: var(--main-bg-color);
+    border-radius: 20px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/****** Hebergements ***********/
+.hebergements {
+    width: 65%;
+}
+
+/****** Populaires ***********/
+.populaires {
+    width: 32%;
+}
+
+.populaires-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.populaires-cards .card {
+    display: flex;
+    margin-top: 33px;
+}
+
+.populaires-cards img {
+    width: 33%;
+    height: 136px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.populaires-cards .card-content {
+    width: 67%;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.populaires-cards .card-title {
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+.populaires-cards .card-subtitle {
+    margin: 0;
+}
+
+.populaires-cards .card-rating {
+    margin-bottom: 5px;
+}
+
+
+
+
+
+/******la partie que j'ai ajoutée***/
+
+/*****nous donnons à la balise de navigation un affichage flexible 
+pour assurer l'alignement du logo et deux boutons (hébergement et activités)***/
+nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;/****pour faire de l'espace entre le contenu de la barre de navigation***/
+    padding: 4px;
+}
+.logo-holder{
+    padding: 8px;
+}
+.logo{
+    width: 70px;
+}
+
+/******list-menu contient les deux éléments hebergemnet et activités***/
+/******la même chose que la barre de navigation, nous lui donnons un affichage flexible avec
+space-between pour séparer le contenu****/
+.list-menu{
+    display: flex;
+    width: 250px;
+    justify-content: space-between;    
+}
+li{
+    list-style: none;/*****supprimer la decoration par défaut de la liste****/
+}
+/******ensuit nous donnons notre propre design***/
+.list-menu li a {
+    color: black; /* default color */
+    text-decoration: none;/****pour supremer le decoration par default de balise a***/
+    padding: 8px;
+    outline: none;
+}
+
+/*****nous donnons maintenant à chaque li une animation de clic où lorsque vous cliquez,
+ la couleur du texte change en bleu et une petite ligne apparaît sous le texte***/
+.list-menu li a:focus {
+    color: #0065FC;;
+    border-bottom: 3px solid #0065FC;; /* active color */
+}
+
+/****maintenant nous concevons la barre de recherche***/
+
+.search-bar{
+    display: flex;
+}
+
+/*****nous concevons d’abord l’icône de la barre de navigation 
+en faisant apparaître au centre du conatiner en utilisant les propriétés flexbox***/
+.location-icon{
+    /****nous avons d'abord donné au conteneur une forme de cube avec fond gris****/
+    width:50px;
+    height: 50px;
+    background-color: #D9D9D9;
+    display: flex;
+    /***pour nous assurer que l'icône d'emplacement 
+    est au centre, nous lui donnons deux propriétés flexbox***/
+    justify-content: center;/***pour s'assurer que l'icône est centrée dans la colonne centrale***/
+    align-items: center;/***pour s'assurer que l'icône est centrée dans la lign centrale***/
+    border-top-left-radius: 20px;/***faire pivoter la bordure**/
+    border-bottom-left-radius: 20px;
+}
+.dark_gray{
+    color: black;
+}
+
+/*****pour le input de recherch***/
+.search-input{
+    border-top: 1px solid #D9D9D9;/***nous donnons à la bordure une couleur grise***/
+    border-bottom: 1px solid #D9D9D9;
+    border-right: none;/***on supprime les deux bordures inutiles (gauche et droite)***/
+    border-left: none;
+    outline: none;
+    /****nous donnons une taille au texte et veillons à ce qu'il apparaisse au centre de l input***/
+    font-size: 20px;
+    text-align: center;
+    width: 300px;
+    font-weight: bold; 
+}
+/*****maintenant, nous concevons le bouton en donnant un fond bleu et une couleur de texte blanche***/
+.search-button{
+    border: none;
+    background-color: #0065FC;
+    font-weight: bold; 
+    font-size: 15px;
+    padding: 16px;
+    color: white;
+    /****nous faisons pivoter deux côtés des frontières***/
+    border-bottom-right-radius:20px ;
+    border-top-right-radius:20px ;
+}
+
+/****pour le bouton filtre on fait la même chose qu'avec le bouton recherche mais 
+pour la frontière, nous les faisons tous pivoter**/
+.filter-button{
+    background:none;
+    border:2px solid #D9D9D9;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: bolder;
+    padding: 16px;
+}
+.filter-holder{
+    display: flex;
+    align-items: center;
+    width: 700px;
+    justify-content: space-between;
+    
+}
+
+/***nous donnons aux boutons de filtre une animation
+ lorsque la souris est au-dessus d'eux où ils changent de couleur d'arrière-plan****/
+.filter-button:hover{
+    background-color: #DEEBFF;
+}
+
+/****après avoir terminé la conception de la deuxième partie de la barre de navigation, nous la faisons apparaître dans la même position en utilisant la propriété flexbox 
+flex-direction:colonne;***/
+.second-part-navbar{
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    justify-content: space-between;
+}
+.result-info-icon{
+    border:2px solid #D9D9D9;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+}
+.result-info-holder{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 420px;
+}
+
+/****pour la carte de pour la fiche contenant les informations de la chambre d'hôtel, 
+nous lui donnons un design simple avec un fond blanc et un peu d'ombre sur les côtés***/
+.card-hebergements{
+    width: 220px;
+    padding: 4px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 1px 8px #888888;
+}
+
+
+.chamber-image{
+    /***pour l'image de chamber on dans une taille
+     qui couvrent la largeur du conteneur et pour la hauteur nous lui donnons 100px**/
+    width:100%;
+    height: 100px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.chamber-image-holder{
+    /***pour l'image conteneur de l'image en dans une width de 220px ***/
+    /***ensuit en centrer l'image dans le par utilisant flex box***/
+    width: 220px;
+    display: flex;
+    justify-content: center;
+}
+.chamber-info-holder{
+    padding-left: 16px;
+    width: 100%;
+    height: 100px;
+
+}
+
+
+/****pour le conteneur qui contient toutes les cartes, nous utilisons un système de grille pour les organiser***/
+.hebergements-cards-holder{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /*pour chaque ligne que nous créons, nous pouvons contenir trois cartes au maximum*/
+    gap: 20px;/***nous séparons la carte verticalement et horizontalement***/
+    row-gap: 32px; 
+}
+
+.affiche-plus{
+    padding: 4px;
+    cursor: pointer; 
+    width: 150px;
+}
+
+/***pour les activiotés ça se passe pareil qu'avec les tags précédents***/
+/***nous utilisons la flexbox pour organiser les tags***/
+.Activities-holder{
+ background-color: #D9D9D9;
+ border-radius: 20px;
+ padding: 32px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+
+}
+.activity-title{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+
+}
+.activity{
+    width: 270px;
+    height: 400px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 1px 8px #888888;
+}
+.activity-image{
+    width: 270px;
+    height: 350px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.activity-title{
+ padding: 8px;
+}
+.activities{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /*nous utilisons le système de grille pour organiser les cartes d'activités où la ligne ne prend que 4 cartes maximum*/
+    gap: 20px;
+    row-gap: 32px; 
+    width: 94%;
+    justify-content: center;
+}
+
+th,td{
+    width: 200px;
+    text-align: center;
+}
+.full_width{
+    width: 100%;
+}
+.scrollable_Y{
+    overflow-y: auto;
+    
+}
+#image_holder{
+    max-width: 400px;
+}
+
+.equipment_image{
+    width: 70px;
+    height: 70px;
+}
+.new_equipment{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.close{
+    color:red;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer; 
+    
+}
+.close:hover{
+    color:white;
+    background-color: red;
+}
+/* Le code ci-dessous correspond à la version responsive uniquement */
+
+/****** Media queries ***********/
+/* Medium devices (tablets, less/equal than 1024px) */
+@media (max-width: 1024px) {
+    .hebergements-and-populaires {
+        flex-direction: column;
+    }
+
+    .hebergements {
+        width: 100%;
+    }
+
+    .populaires {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .populaires-cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .populaires-cards a {
+        width: 30%;
+    }
+
+    .populaires-cards .card-title {
+        font-size: 14px;
+    }
+
+    .populaires-cards .card-subtitle {
+        font-size: 13px;
+    }
+}
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+}

@@ -1,0 +1,64 @@
+{% extends "dashboard/index.html.twig" %}
+
+
+{% block search_bar %}
+	{% include 'employee/searchbar.html.twig' %}
+{% endblock %}
+
+{% block section %}
+	<section>
+
+		<form action="{{path('saveUser')}}" method="post" enctype="multipart/form-data" class="scrollable_Y p-4" style="height:450px;">
+
+			<div data-mdb-input-init class="form-outline mb-4">
+				<label class="form-label" for="typePasswordX-2">type</label>
+				<select name="type" id="equipment_state" class="form-control form-control-lg">
+					<option value="Admin">Admin</option>
+					<option value="subAdmin">subAdmin</option>
+				</select>
+			</div>
+			<div data-mdb-input-init class="form-outline mb-4">
+
+				<label class="form-label fs-5" for="typeEmailX-2">email</label>
+				<input type="email" list="emails_list" id="typeEmailX-2" name="email" minlength="4" class="form-control form-control-lg" required/>
+				<datalist id="emails_list">
+					{% for email in emails %}
+						{% if email.email is not empty %}
+							<option value="{{email.email}}" ></option>
+						{% endif %}
+						
+					{% endfor %}
+					
+					
+				</datalist>
+
+			</div>
+			<div data-mdb-input-init class="form-outline mb-4">
+				<label class="form-label" for="password_field">password</label>
+				<div class="d-flex">
+					<input type="password" id="password_field" name="password_field" class="form-control form-control-lg" minlength="4" required/>
+					<button class="btn btn-primary btn-lg btn-block" type="button" onclick="generatePassword()">generer un password</button>
+				</div>
+				<div>
+					<input type="checkbox" name="" id="password_visibility">
+					<label for="password_visibility">show password</label>
+				</div>
+
+
+			</div>
+
+
+			<button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block" type="submit">sauvegarder</button>
+		</form>
+
+
+	</section>
+
+
+{% endblock %}
+
+
+{% block jscript %}
+	<script src="{{asset('js/generate_password.js')}}"></script>
+
+{% endblock %}

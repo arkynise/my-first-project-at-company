@@ -1,0 +1,42 @@
+{% extends "dashboard/index.html.twig" %}
+
+
+{% block search_bar %}
+	{% include 'employee/searchbar.html.twig' %}
+{% endblock %}
+
+{% block section %}
+	<section>
+
+		<form action="{{path('SauvgarderTypeEquipment')}}" method="post" class="scrollable_Y p-4" style="height:450px;">
+			
+            
+			<div data-mdb-input-init class="form-outline mb-4">
+
+				<label class="form-label fs-5" for="typeEmailX-2">type nom</label>
+				<input type="text" id="typeEmailX-2" name="type_nom" minlength="4" class="form-control form-control-lg" required/>
+
+			</div>
+		
+
+			
+
+			
+			<div data-mdb-input-init class="form-outline mb-4" id="distination"></div>
+			<div data-mdb-input-init class="form-outline mb-4" id="state_utiliser"></div>
+			<button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block" type="submit">sauvegarder</button>
+		</form>
+
+
+	</section>
+
+	
+
+
+{% endblock %}
+
+
+{% block jscript %}
+	<script src="{{asset('js/upload_image.js')}}"></script>
+
+{% endblock %}
